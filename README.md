@@ -11,7 +11,8 @@ Guaranteed to work on `no_std` targets, but also comfortable on standard targets
 
 - Token bucket
 - Fixed window
-- Sliding window
+- Sliding window log
+- Sliding window counter
 - ..something else? Make a request or open a PR :)
 
 ## Usage
@@ -34,17 +35,13 @@ if bucket.try_consume_one().is_ok() {
 
 On `no_std` targets you'll have to install the crate with default features disabled and
 provide bindings to your platforms clock functionality in the form of a closure that returns
-the current timestamp as `u64` milliseconds.
+the current timestamp as `Duration` from some fixed epoch in the past.
 
 ```rust
 // Instantiate a token bucket that allowes an average consume
 // rate of 100 tokens per second and with bucket_size = 10
 let mut bucket = burster::TokenBucket::new_with_time_provider(100, 10, || {
     // Return current timestamp
-    my_clock_fn()
+    Duration::from_micros(get_platform_micros_from_boot())
 });
 ```
-
-The *time provider* closure should return a monotonous nondecreasing timestamp, which does
-not have to be bound to a specific epoch. It can, for example, simply be a timestamp from
-the last system boot.

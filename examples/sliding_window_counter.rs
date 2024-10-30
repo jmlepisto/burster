@@ -7,7 +7,7 @@ use std::{
 
 fn main() {
     // Set up the limiter to allow 100 consumes per second (window_width = 1s)
-    let mut bucket = burster::fixed_window(100, 1000);
+    let mut bucket = burster::sliding_window_counter(100, 1000);
 
     let start = Instant::now();
     let mut pass = 0;
