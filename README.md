@@ -1,5 +1,9 @@
 # Burster ⏩
 
+![Crates.io Version](https://img.shields.io/crates/v/burster?style=flat-square&link=https%3A%2F%2Fcrates.io%2Fcrates%2Fburster)
+![docs.rs](https://img.shields.io/docsrs/burster?style=flat-square&link=https%3A%2F%2Fdocs.rs%2Fburster%2Flatest%2Fburster%2F)
+
+
 Burster is a high quality and lightweigh crate providing stack allocated rate limiters with minimal dependencies.
 Guaranteed to work on `no_std` targets, but also comfortable on standard targets.
 
