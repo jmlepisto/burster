@@ -70,7 +70,7 @@ where
 
     ///
     /// # Notes
-    /// * If you are developing for a `std` target, you probably wish to use [`sliding_window`]
+    /// * If you are developing for a `std` target, you probably wish to use [`sliding_window_log`]
     /// * Window width is defined by the generic argument `W: usize`
     pub fn new_with_time_provider(capacity: u64, time_provider: T) -> Self {
         let time_now = time_provider();
@@ -124,7 +124,7 @@ where
 /// Sliding window counter -type rate limiter
 ///
 /// A sliding window counter can be described as a more
-/// performant but less accurate approximation for [`SlidingWindow`].
+/// performant but less accurate approximation for [`SlidingWindowLog`].
 ///
 /// The timeline is split into fixed windows of defined
 /// size and then an approximated moving window limit
@@ -181,7 +181,7 @@ where
     ///   timestamp as [`Duration`] from some fixed epoch in the past
     ///
     /// # Notes
-    /// * If you are developing for a `std` target, you probably wish to use [`sliding_window`]
+    /// * If you are developing for a `std` target, you probably wish to use [`sliding_window_counter`]
     /// * Window width is defined by the generic argument `W: usize`
     pub fn new_with_time_provider(capacity: u64, window_width_ms: u64, time_provider: T) -> Self {
         let time_now = time_provider();

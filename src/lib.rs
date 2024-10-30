@@ -8,7 +8,7 @@
 //! * [`TokenBucket`] - basic token bucket type limiter
 //! * [`FixedWindow`] - fixed window type limiter
 //! * [`SlidingWindowLog`] - sliding window type limiter
-//! * [`SlidingWindowCounter`] - sliding window counter type limiter (an approximation of [`SlidingWindow`])
+//! * [`SlidingWindowCounter`] - sliding window counter type limiter (an approximation of [`SlidingWindowLog`])
 //!
 //! ## Platform support
 //!
