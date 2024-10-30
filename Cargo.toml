@@ -3,6 +3,9 @@ name = "burster"
 version = "0.1.0"
 edition = "2021"
 license = "MIT"
+description = "Lightweight stack allocated rate limiter implementations"
+documentation = "https://docs.rs/burster"
+repository = "https://github.com/jmlepisto/burster"
 
 keywords = [
     "token_bucket",
