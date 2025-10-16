@@ -215,7 +215,7 @@ where
             self.tokens_prev = self.tokens_this;
             self.tokens_this = 0;
             self.window_index = index;
-        } else if index == (self.window_index + 2) {
+        } else if index >= (self.window_index + 2) {
             // We skipped at least one full window, zero counters
             self.tokens_prev = 0;
             self.tokens_this = 0;
